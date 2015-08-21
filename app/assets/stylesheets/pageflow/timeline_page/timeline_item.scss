@@ -1,0 +1,96 @@
+.timeline_item {
+  $item-width-small: 300px;
+  $item-width-medium: 390px;
+  $item-width-large: 480px;
+  $menu-margin: 2px;
+
+  list-style: none;
+
+  .timeline_item-wrapper,
+  .timeline_item_spacer {
+    width: 480px;
+    float: left;
+    clear: left;
+    position: relative;
+  }
+
+  .timeline_item-wrapper {
+    margin-bottom: 10px;
+  }
+
+  &.right {
+    .timeline_item-wrapper,
+    .timeline_item_spacer {
+      float: right;
+      clear: right;
+    }
+  }
+
+  .timeline_item_editor_menu {
+    position: absolute;
+    top: 0;
+    right: $item-width-medium + $menu-margin;
+    visibility: hidden;
+    opacity: 0;
+    @include transition(opacity 0.2s ease 0.5s,
+                        visibility 0.2s ease 0.5s);
+  }
+
+  &:hover .timeline_item_editor_menu {
+    visibility: visible;
+    opacity: 1;
+    @include transition(opacity 0.2s ease,
+                        visibility 0.2s ease);
+  }
+
+  &.right .timeline_item_editor_menu {
+    left: $item-width-medium + $menu-margin;
+    right: auto;
+  }
+
+  &.small .timeline_item_editor_menu { right: $item-width-small + $menu-margin; }
+  &.large .timeline_item_editor_menu { right: $item-width-large + $menu-margin; }
+  &.right.small .timeline_item_editor_menu { left: $item-width-small + $menu-margin; }
+  &.right.large .timeline_item_editor_menu { left: $item-width-large + $menu-margin; }
+
+  a {
+    width: $item-width-medium;
+    height: 230px;
+    display: block;
+    float: right;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  &.small {
+    a {
+      width: $item-width-small;
+      height: 200px;
+    }
+  }
+
+  &.large {
+    a {
+      width: $item-width-large;
+      height: 260px;
+    }
+  }
+
+  &.right {
+    a {
+      float: left;
+    }
+  }
+
+  .timeline_item-caption {
+    padding: 10px;
+  }
+
+  .page_thumbnail {
+    height: 85%;
+    background-size: 100% auto;
+  }
+}

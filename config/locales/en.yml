@@ -1,0 +1,6 @@
+en:
+  pageflow:
+    timeline_page:
+      page_type_category_name: Links
+      page_type_description: Links ordered as a timeline.
+      page_type_name: Timeline

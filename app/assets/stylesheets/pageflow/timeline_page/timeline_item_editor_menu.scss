@@ -1,0 +1,47 @@
+.timeline_item_editor_menu {
+  width: 40px;
+  z-index: 1;
+
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+  border: solid 1px #444;
+
+  .timeline_item_editor_menu-handle,
+  .timeline_item_editor_menu-button {
+    @include background-icon-center($color: #ddd);
+    height: 40px;
+
+    &:hover {
+      @include background-icon-color(#fff);
+    }
+  }
+
+  .timeline_item_editor_menu-handle {
+    @include fa-arrows-v-icon;
+    cursor: move;
+  }
+
+  .timeline_item_editor_menu-button {
+    @include background-icon-center($color: #ddd);
+  }
+
+  .timeline_item_editor_menu-edit {
+    @include pencil-icon;
+  }
+
+  .timeline_item_editor_menu-toggle_position {
+    @include fa-long-arrow-right-icon;
+
+    .timeline_item.right & {
+      @include fa-long-arrow-left-icon;
+    }
+  }
+
+  .timeline_item_editor_menu-toggle_size {
+    @include resize-full-icon;
+
+    .timeline_item.large & {
+      @include resize-small-icon;
+    }
+  }
+}

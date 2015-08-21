@@ -1,0 +1,37 @@
+de:
+  pageflow:
+    timeline_page:
+      page_type_category_name: Verweise
+      page_type_description: Verweise auf andere Seiten in Form einer Zeitleisteye
+      page_type_name: Zeitleiste
+
+      page_link_attributes:
+        title:
+          label: "Untertitel"
+        timeline_item_position:
+          label: "Position"
+          values:
+            left: "Links"
+            right: "Rechts"
+        timeline_item_size:
+          label: "Größe"
+          values:
+            small: "Klein"
+            medium: "Medium"
+            large: "Groß"
+        thumbnail_image_id:
+          label: "Thumbnail"
+
+      page_attributes:
+        timeline_layout:
+          label: "Layout"
+          values:
+            center: "Mittig ausgerichtet"
+            left: "Links ausgerichtet"
+            right: "Rechts ausgerichtet"
+            margin: "Außen ausgerichtet"
+
+    ui:
+      configuration_editor:
+        tabs:
+          appearance: "Erscheinungsbild"

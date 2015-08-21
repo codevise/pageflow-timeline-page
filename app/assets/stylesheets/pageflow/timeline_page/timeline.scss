@@ -1,0 +1,7 @@
+.timeline {
+  @include clearfix;
+
+  width: 970px;
+  padding: 0;
+  pointer-events: all;
+}
