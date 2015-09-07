@@ -5,7 +5,7 @@
     render() {
       var {Draggable} = pageflow.react.components;
 
-      var start = {x: 0, y: this.props.top};
+      var start = {x: 0, y: this.props.top || 0};
       var bounds = {left: 0, right: 0, top: 0, bottom: 1000};
 
       return (
