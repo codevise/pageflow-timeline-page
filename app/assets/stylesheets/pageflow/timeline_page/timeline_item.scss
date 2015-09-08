@@ -1,21 +1,24 @@
 .timeline_item {
-  $item-width-small: 300px;
-  $item-width-medium: 390px;
-  $item-width-large: 480px;
+  $item-width-small: 60%;
+  $item-width-medium: 80%;
+  $item-width-large: 100%;
+
+  $thumbnail-ratio: 16 / 9;
+
   $menu-margin: 2px;
 
   list-style: none;
 
   .timeline_item-wrapper,
   .timeline_item_spacer {
-    width: 480px;
+    width: 49%;
     float: left;
     clear: left;
     position: relative;
   }
 
   .timeline_item-wrapper {
-    margin-bottom: 10px;
+    margin-bottom: 1.5%;
   }
 
   &.right {
@@ -29,7 +32,8 @@
   .timeline_item_editor_menu {
     position: absolute;
     top: 0;
-    right: $item-width-medium + $menu-margin;
+    right: $item-width-medium;
+    margin-right: $menu-margin;
     visibility: hidden;
     opacity: 0;
     @include transition(opacity 0.2s ease 0.5s,
@@ -44,18 +48,18 @@
   }
 
   &.right .timeline_item_editor_menu {
-    left: $item-width-medium + $menu-margin;
+    left: $item-width-medium;
     right: auto;
+    margin-left: $menu-margin;
   }
 
-  &.small .timeline_item_editor_menu { right: $item-width-small + $menu-margin; }
-  &.large .timeline_item_editor_menu { right: $item-width-large + $menu-margin; }
-  &.right.small .timeline_item_editor_menu { left: $item-width-small + $menu-margin; }
-  &.right.large .timeline_item_editor_menu { left: $item-width-large + $menu-margin; }
+  &.small .timeline_item_editor_menu { right: $item-width-small; }
+  &.large .timeline_item_editor_menu { right: $item-width-large; }
+  &.right.small .timeline_item_editor_menu { left: $item-width-small; }
+  &.right.large .timeline_item_editor_menu { left: $item-width-large; }
 
   a {
     width: $item-width-medium;
-    height: 230px;
     display: block;
     float: right;
     background-color: rgba(0, 0, 0, 0.6);
@@ -68,14 +72,12 @@
   &.small {
     a {
       width: $item-width-small;
-      height: 200px;
     }
   }
 
   &.large {
     a {
       width: $item-width-large;
-      height: 260px;
     }
   }
 
@@ -90,7 +92,7 @@
   }
 
   .page_thumbnail {
-    height: 85%;
+    padding-top: floor(percentage(1 / $thumbnail-ratio));
     background-size: 100% auto;
   }
 }

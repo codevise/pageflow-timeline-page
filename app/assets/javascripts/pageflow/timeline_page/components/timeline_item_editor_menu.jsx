@@ -2,6 +2,11 @@
   var mutate = pageflow.react.mutate;
 
   class TimelineItemEditorMenu extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {};
+    }
+
     render() {
       var {Draggable} = pageflow.react.components;
 
@@ -12,10 +17,11 @@
         <Draggable start={start}
                    grid={[5, 5]}
                    bounds={bounds}
+                   moveOnStartChange={this.state.topChanged}
                    handle=".timeline_item_editor_menu-handle"
-                   onStart={this.onDragStart.bind(this)}
-                   onDrag={this.onDrag.bind(this)}
-                   onStop={this.onDragStop.bind(this)}>
+                   onStart={this._handleDragStart.bind(this)}
+                   onDrag={this._handleDrag.bind(this)}
+                   onStop={this._handleDragStop.bind(this)}>
 
           <div className="timeline_item_editor_menu">
             <div className="timeline_item_editor_menu-handle"
@@ -34,24 +40,23 @@
       );
     }
 
-    onDragStart() {
+    componentWillReceiveProps(nextProps) {
+      this.setState({
+        topChanged: (nextProps.top !== this.props.top)
+      });
+    }
+
+    _handleDragStart() {
       this.context.pageScroller.disable();
     }
 
-    onDrag(event, ui) {
+    _handleDrag(event, ui) {
       this.props.onDrag(ui.position.top);
     }
 
-    onDragStop(event, ui) {
+    _handleDragStop(event, ui) {
       this.props.onDragStop(ui.position.top);
       this.context.pageScroller.enable();
-
-      mutate('updatePageLink', {
-        id: this.props.pageLink.id,
-        attributes: {
-          top: ui.position.top
-        }
-      });
     }
 
     _handleEditClick() {

@@ -1,46 +1,94 @@
 (function() {
+  var mutate = pageflow.react.mutate;
+
   class TimelineItemSpacer extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {};
+    }
+
     render() {
       var {TimelineItemEditorMenu} = pageflow.timelinePage;
 
       return (
-        <div className={this.className()} style={{height: this.height()}} >
+        <div className={this._className()}>
+          <div className="timeline_item_spacer-inner" style={this._style()} />
           <TimelineItemEditorMenu pageLink={this.props.pageLink}
-                                  top={this.height()}
-                                  onDrag={this.onDrag.bind(this)}
-                                  onDragStop={this.onDragStop.bind(this)}/>
+                                  top={this._menuTop()}
+                                  onDrag={this._handleDrag.bind(this)}
+                                  onDragStop={this._handleDragStop.bind(this)}/>
         </div>
       );
     }
 
-    className() {
+    pageDidActivate() {
+      this._measure();
+    }
+
+    pageDidResize() {
+      this._measure();
+    }
+
+    _className() {
       return [
         'timeline_item_spacer',
-        this.isDragging() ? 'is_dragging' : null
+        this._isDragging() ? 'is_dragging' : null
       ].join(' ');
     }
 
-    height() {
-      return this.isDragging() ? this.state.height : this.props.pageLink.top;
+    _style() {
+      if (this._isDragging()) {
+        return {
+          height: this.state.height
+        };
+      }
+      else {
+        return {
+          paddingTop: this.props.pageLink.top + '%'
+        };
+      }
     }
 
-    isDragging() {
+    _menuTop() {
+      if (this.state.width) {
+        return this.state.width * (this.props.pageLink.top || 0) / 100;
+      }
+
+      return 0;
+    }
+
+    _isDragging() {
       return this.state && this.state.dragging;
     }
 
-    onDrag(top) {
+    _handleDrag(top) {
       this.setState({
         dragging: true,
         height: top
       });
     }
 
-    onDragStop(top) {
+    _handleDragStop(top) {
       this.setState({
         dragging: false
+      });
+
+      var width = React.findDOMNode(this).offsetWidth;
+
+      mutate('updatePageLink', {
+        id: this.props.pageLink.id,
+        attributes: {
+          top: top / width * 100
+        }
+      });
+    }
+
+    _measure() {
+      this.setState({
+        width: React.findDOMNode(this).offsetWidth
       });
     }
   }
 
-  pageflow.timelinePage.TimelineItemSpacer = TimelineItemSpacer;
+  pageflow.timelinePage.TimelineItemSpacer = pageflow.react.createPageComponent(TimelineItemSpacer);
 }());
