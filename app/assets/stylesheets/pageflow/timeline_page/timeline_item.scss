@@ -95,4 +95,25 @@
     padding-top: floor(percentage(1 / $thumbnail-ratio));
     background-size: 100% auto;
   }
+
+  @include phone {
+    .timeline_item_editor_menu {
+      display: none;
+    }
+
+    .timeline_item-wrapper {
+      float: none;
+      width: 100%;
+      margin-bottom: 2%;
+    }
+
+    .timeline_item_spacer {
+      display: none;
+    }
+
+    a {
+      float: none;
+      width: $item-width-large;
+    }
+  }
 }
