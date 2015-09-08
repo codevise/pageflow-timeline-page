@@ -18,6 +18,7 @@
                              customThumbnailId={this.props.pageLink.thumbnail_image_id} />
 
               <div className="timeline_item-caption">
+                <span className="timeline_item-tagline">{this.props.pageLink.tagline}</span>
                 {this.caption()}
               </div>
             </PageLink>

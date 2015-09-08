@@ -1,11 +1,12 @@
 .timeline_item {
+  $item-background-color: #1a171c;
   $item-width-small: 60%;
   $item-width-medium: 80%;
   $item-width-large: 100%;
 
   $thumbnail-ratio: 16 / 9;
 
-  $menu-margin: 2px;
+  $menu-margin: 5px;
 
   list-style: none;
 
@@ -62,7 +63,8 @@
     width: $item-width-medium;
     display: block;
     float: right;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: $item-background-color;
+    padding: 2px;
     color: #fff;
     text-decoration: none;
     font-size: 12px;
@@ -88,7 +90,14 @@
   }
 
   .timeline_item-caption {
-    padding: 10px;
+    padding: 7px 10px;
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  .timeline_item-tagline {
+    display: block;
+    color: #48a2dc;
   }
 
   .page_thumbnail {

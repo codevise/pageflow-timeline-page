@@ -6,8 +6,10 @@ de:
       page_type_name: Zeitleiste
 
       page_link_attributes:
-        title:
+        tagline:
           label: "Untertitel"
+        title:
+          label: "Beschreibung"
         timeline_item_position:
           label: "Position"
           values:

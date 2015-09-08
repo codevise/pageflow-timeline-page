@@ -58,6 +58,7 @@ pageflow.editor.pageTypes.register('timeline_page', {
         this.input('timeline_item_size', pageflow.SelectInputView, {
           values: ['small', 'medium', 'large']
         });
+        this.input('tagline', pageflow.TextInputView);
         this.input('title', pageflow.TextInputView);
       });
     }
