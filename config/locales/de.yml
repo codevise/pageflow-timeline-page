@@ -1,6 +1,7 @@
 de:
   pageflow:
     timeline_page:
+      page_type_feature_name: "Zeitleisten Seitentyp"
       page_type_category_name: Verweise
       page_type_description: Verweise auf andere Seiten in Form einer Zeitleisteye
       page_type_name: Zeitleiste
