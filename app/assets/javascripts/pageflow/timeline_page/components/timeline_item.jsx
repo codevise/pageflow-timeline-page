@@ -13,7 +13,7 @@
           <TimelineItemSpacer pageLink={this.props.pageLink} />
 
           <div className="timeline_item-wrapper">
-            <PageLink page={targetPage}>
+            <PageLink pageLink={this.props.pageLink}>
               <PageThumbnail page={targetPage}
                              customThumbnailId={this.props.pageLink.thumbnail_image_id} />
 
