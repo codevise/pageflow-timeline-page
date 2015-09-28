@@ -113,14 +113,14 @@
     .timeline_item-wrapper {
       float: none;
       width: 100%;
-      margin-bottom: 2%;
+      margin-bottom: 15px;
     }
 
     .timeline_item_spacer {
       display: none;
     }
 
-    a {
+    a, &.right a {
       float: none;
       width: $item-width-large;
     }
