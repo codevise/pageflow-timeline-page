@@ -110,7 +110,7 @@
       display: none;
     }
 
-    .timeline_item-wrapper {
+    .timeline_item-wrapper, &.right .timeline_item-wrapper {
       float: none;
       width: 100%;
       margin-bottom: 15px;
