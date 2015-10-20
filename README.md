@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/pageflow-timeline-page.svg)](http://badge.fury.io/rb/pageflow-timeline-page)
 
-Page type showing before/after image sliders (Digit style).
+Page type to display a chronological list of page links.
 
 ## Installation
 
@@ -20,6 +20,9 @@ Register the page type:
 
 Include javascripts and stylesheets:
 
+    # app/assets/javascripts/components.js
+    //= require "pageflow/timeline_page/components"
+
     # app/assets/javascripts/pageflow/application.js
     //= require "pageflow/timeline_page"
 
@@ -29,8 +32,7 @@ Include javascripts and stylesheets:
     # app/assets/stylesheets/pageflow/application.css.scss
     @import "pageflow/timeline_page";
 
-Execute `bundle install`
-Restart the application server.
+Execute `bundle install` and restart the application server.
 
 ## Troubleshooting
 
