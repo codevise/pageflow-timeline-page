@@ -111,7 +111,7 @@
     }
 
     .timeline_item-wrapper, &.right .timeline_item-wrapper {
-      float: none;
+      float: none !important;
       width: 100% !important;
       margin-bottom: 15px;
     }
@@ -121,7 +121,7 @@
     }
 
     a, &.right a {
-      float: none;
+      float: none !important;
       width: $item-width-large !important;
     }
   }
