@@ -1,5 +1,4 @@
 .timeline_item {
-  $item-background-color: #1a171c;
   $item-width-small: 60%;
   $item-width-medium: 80%;
   $item-width-large: 100%;
@@ -63,7 +62,6 @@
     width: $item-width-medium;
     display: block;
     float: right;
-    background-color: $item-background-color;
     padding: 2px;
     color: #fff;
     text-decoration: none;
@@ -97,7 +95,6 @@
 
   .timeline_item-tagline {
     display: block;
-    color: #48a2dc;
   }
 
   .page_thumbnail {

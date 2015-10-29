@@ -1,0 +1,28 @@
+.timeline {
+  $timeline-main-color: $main-color !default;
+  $timeline-item-background-color: #1a171c !default;
+  $timeline-item-tagline-color: $timeline-main-color !default;
+  $timeline-item-hover-scale: 1.02 !default;
+
+  @mixin ensure-anti-alias-for-webkit-during-transition {
+    -webkit-backface-visibility: hidden;
+  }
+
+  .timeline_item a {
+    background-color: $timeline-item-background-color;
+    @include transition(transform 0.3s);
+    @include ensure-anti-alias-for-webkit-during-transition;
+
+    &:hover {
+      @include transform(scale($timeline-item-hover-scale));
+
+      @include phone {
+        @include transform(scale(1));
+      }
+    }
+  }
+
+  .timeline_item-tagline {
+    color: $timeline-item-tagline-color;
+  }
+}
