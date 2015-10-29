@@ -1,40 +1,54 @@
 de:
   pageflow:
     timeline_page:
-      page_type_feature_name: "Zeitleisten Seitentyp"
-      page_type_category_name: Verweise
-      page_type_description: Verweise auf andere Seiten in Form einer Zeitleiste
-      page_type_name: Zeitleiste
+      help_entries:
+        page_type:
+          menu_item: Zeitleiste
+          text: ! '# Zeitleiste
 
-      page_link_attributes:
-        tagline:
-          label: "Untertitel"
-        title:
-          label: "Beschreibung"
-        timeline_item_position:
-          label: "Position"
-          values:
-            left: "Links"
-            right: "Rechts"
-        timeline_item_size:
-          label: "Größe"
-          values:
-            small: "Klein"
-            medium: "Medium"
-            large: "Groß"
-        thumbnail_image_id:
-          label: "Thumbnail"
 
+            Stelle eine Liste von Links mit dem Aussehen einer Zeitleiste zusammen. Dieser Seitentyp kann auch benutzt werden, um eine freie Kollage von Verweisen anzuordnen. Er ist aber am besten geeignet, um chronologisch geordnete Inhalte aufzubereiten.
+
+
+            Jeder Eintrag verweist auf eine andere Seite des Beitrags, auf der der Leser vertiefende Informationen finden kann.
+
+
+            Typische Anwendungsbeispiele: Liste historischer Ereignisse, Interview Reihe, Darstellung eines mehrschrittigen Prozesses.'
       page_attributes:
         timeline_layout:
-          label: "Layout"
+          label: Layout
           values:
-            center: "Mittig ausgerichtet"
-            left: "Links ausgerichtet"
-            right: "Rechts ausgerichtet"
-            margin: "Außen ausgerichtet"
-
+            center: Mittig ausgerichtet
+            left: Links ausgerichtet
+            margin: Außen ausgerichtet
+            right: Rechts ausgerichtet
+      page_link_attributes:
+        tagline:
+          label: Tagline
+        thumbnail_image_id:
+          inline_help: Bild, das in der Zeitleiste angezeigt werden soll, manuell festlegen. Ansonsten wird das Thumbnail der Zielseite verwendet.
+          label: Benutzerdefiniertes Thumbnail
+        timeline_item_position:
+          inline_help: Eintrag in der Zeitleiste auf der rechten oder linken Seite zeigen.
+          label: Position
+          values:
+            left: Links
+            right: Rechts
+        timeline_item_size:
+          inline_help: Einträge in der Zeitleiste können in verschiedenen Größen gezeigt werden, um das Erscheinungsbild der Seite aufzulockern.
+          label: Größe
+          values:
+            large: Groß
+            medium: Medium
+            small: Klein
+        title:
+          inline_help: Leer lassen, um den Titel der Zielseite zu verwenden.
+          label: Titel
+      page_type_category_name: Verweise
+      page_type_description: Verweise auf andere Seiten in Form einer Zeitleiste
+      page_type_feature_name: Zeitleisten Seitentyp
+      page_type_name: Zeitleiste
     ui:
       configuration_editor:
         tabs:
-          appearance: "Erscheinungsbild"
+          appearance: Erscheinungsbild

@@ -1,6 +1,54 @@
 en:
   pageflow:
     timeline_page:
+      help_entries:
+        page_type:
+          menu_item: Timeline
+          text: ! '# Timeline
+
+
+            Build a timeline like list of links to other pages. While noting stops you from using the page type as a freely organized collage of links, it works best to visualize chronological content.
+
+
+            Each item links to a page inside the Pageflow allowing the user to further explore details of a topic.
+
+
+            Examples of application: List of historical events, series of interviews, depicting a multi step processes.'
+      page_attributes:
+        timeline_layout:
+          label: Layout
+          values:
+            center: Centered
+            left: Left aligned
+            margin: Aligned at margins
+            right: Right aligned
+      page_link_attributes:
+        tagline:
+          label: Tagline
+        thumbnail_image_id:
+          inline_help: Manually define image to display in timeline. Page thumbnail is used by default.
+          label: Custom Thumbnail
+        timeline_item_position:
+          inline_help: Alignment of timeline item.
+          label: Position
+          values:
+            left: Left
+            right: Right
+        timeline_item_size:
+          inline_help: Timeline items can be displayed in different sizes.
+          label: Size
+          values:
+            large: Large
+            medium: Medium
+            small: Small
+        title:
+          inline_help: Leave blank to use title of target page.
+          label: Title
       page_type_category_name: Links
       page_type_description: Links ordered as a timeline.
+      page_type_feature_name: Timeline Page Type
       page_type_name: Timeline
+    ui:
+      configuration_editor:
+        tabs:
+          appearance: Appearance
