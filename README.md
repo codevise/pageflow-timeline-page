@@ -11,11 +11,11 @@ Add this line to your application's Gemfile:
     # Gemfile
     gem 'pageflow-timeline-page'
 
-Register the page type:
+Register the plugin:
 
     # config/initializers/pageflow.rb
     Pageflow.configure do |config|
-      config.register_page_type(Pageflow::TimelinePage.page_type)
+      config.plugin(Pageflow::TimelinePage.plugin)
     end
 
 Include javascripts and stylesheets:
@@ -33,6 +33,8 @@ Include javascripts and stylesheets:
     @import "pageflow/timeline_page";
 
 Execute `bundle install` and restart the application server.
+
+Now you can enable the page type in your feature settings.
 
 ## Troubleshooting
 
