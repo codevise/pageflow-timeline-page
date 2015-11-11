@@ -30,9 +30,27 @@
     className() {
       return [
         'timeline_item',
-        this.props.pageLink.timeline_item_position,
+        'position_' + (this.props.pageLink.timeline_item_position || 'left'),
+        'alignment_' + this.alignment(),
         this.props.pageLink.timeline_item_size || 'medium'
       ].join(' ');
+    }
+
+    alignment() {
+      var position = this.props.pageLink.timeline_item_position;
+
+      if (this.props.timelineLayout === 'right') {
+        return 'right';
+      }
+      else if (this.props.timelineLayout === 'left') {
+        return 'left';
+      }
+      else if (this.props.timelineLayout === 'margin') {
+        return position === 'right' ? 'right' : 'left';
+      }
+      else {
+        return position === 'right' ? 'left' : 'right';
+      }
     }
 
     caption() {

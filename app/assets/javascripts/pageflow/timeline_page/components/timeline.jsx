@@ -13,11 +13,11 @@
 
       return _(this.props.pageLinks).map((pageLink) => {
         return (
-          <TimelineItem pageLink={pageLink} key={pageLink.id} />
+          <TimelineItem timelineLayout={this.props.layout} pageLink={pageLink} key={pageLink.id} />
         );
       });
     }
   };
-  
+
   pageflow.timelinePage.Timeline = pageflow.react.createContainer(Timeline);
 }());

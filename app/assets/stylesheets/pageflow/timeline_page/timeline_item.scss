@@ -21,7 +21,7 @@
     margin-bottom: 1.5%;
   }
 
-  &.right {
+  &.position_right {
     .timeline_item-wrapper,
     .timeline_item_spacer {
       float: right;
@@ -32,8 +32,6 @@
   .timeline_item_editor_menu {
     position: absolute;
     top: 0;
-    right: $item-width-medium;
-    margin-right: $menu-margin;
     visibility: hidden;
     opacity: 0;
     @include transition(opacity 0.2s ease 0.5s,
@@ -47,16 +45,43 @@
                         visibility 0.2s ease);
   }
 
-  &.right .timeline_item_editor_menu {
-    left: $item-width-medium;
-    right: auto;
-    margin-left: $menu-margin;
+  &.position_left {
+    .timeline_item_editor_menu {
+      margin-right: $menu-margin;
+    }
+
+    &.small .timeline_item_editor_menu {
+      right: $item-width-small;
+    }
+
+    &.medium .timeline_item_editor_menu {
+      right: $item-width-medium;
+    }
+
+    &.large .timeline_item_editor_menu,
+    &.alignment_left .timeline_item_editor_menu {
+      right: $item-width-large;
+    }
   }
 
-  &.small .timeline_item_editor_menu { right: $item-width-small; }
-  &.large .timeline_item_editor_menu { right: $item-width-large; }
-  &.right.small .timeline_item_editor_menu { left: $item-width-small; }
-  &.right.large .timeline_item_editor_menu { left: $item-width-large; }
+  &.position_right {
+    .timeline_item_editor_menu {
+      margin-left: $menu-margin;
+    }
+
+    &.small .timeline_item_editor_menu {
+      left: $item-width-small;
+    }
+
+    &.medium .timeline_item_editor_menu {
+      left: $item-width-medium;
+    }
+
+    &.large .timeline_item_editor_menu,
+    &.alignment_right .timeline_item_editor_menu {
+      left: $item-width-large;
+    }
+  }
 
   a {
     width: $item-width-medium;
@@ -81,7 +106,7 @@
     }
   }
 
-  &.right {
+  &.alignment_left {
     a {
       float: left;
     }
@@ -107,7 +132,7 @@
       display: none;
     }
 
-    .timeline_item-wrapper, &.right .timeline_item-wrapper {
+    .timeline_item-wrapper, &.position_right .timeline_item-wrapper {
       float: none !important;
       width: 100% !important;
       margin-bottom: 15px;
@@ -117,7 +142,7 @@
       display: none;
     }
 
-    a, &.right a {
+    a, &.alignment_left a {
       float: none !important;
       width: $item-width-large !important;
     }
