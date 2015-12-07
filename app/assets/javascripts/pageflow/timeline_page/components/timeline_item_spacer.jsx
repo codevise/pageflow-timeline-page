@@ -73,7 +73,7 @@
         dragging: false
       });
 
-      var width = React.findDOMNode(this).offsetWidth;
+      var width = ReactDOM.findDOMNode(this).offsetWidth;
 
       mutate('updatePageLink', {
         id: this.props.pageLink.id,
@@ -85,7 +85,7 @@
 
     _measure() {
       this.setState({
-        width: React.findDOMNode(this).offsetWidth
+        width: ReactDOM.findDOMNode(this).offsetWidth
       });
     }
   }
