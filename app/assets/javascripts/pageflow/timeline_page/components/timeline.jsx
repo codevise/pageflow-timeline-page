@@ -11,7 +11,7 @@
     renderTimelineItems() {
       var {TimelineItem} = pageflow.timelinePage;
 
-      return _(this.props.pageLinks).map((pageLink) => {
+      return this.props.pageLinks.map((pageLink) => {
         return (
           <TimelineItem timelineLayout={this.props.layout} pageLink={pageLink} key={pageLink.id} />
         );
