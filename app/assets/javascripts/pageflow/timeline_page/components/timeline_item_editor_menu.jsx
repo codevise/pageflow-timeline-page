@@ -65,7 +65,7 @@
 
     _handleToggleSizeClick() {
       var sizes = ['large', 'small', 'medium'];
-      var currentSizeIndex = sizes.indexOf(this.props.pageLink.timeline_item_size);
+      var currentSizeIndex = sizes.indexOf(this.props.pageLink.timelineItemSize);
       var newSize = sizes[(currentSizeIndex + 1) % sizes.length];
 
       mutate('updatePageLink', {
@@ -80,7 +80,7 @@
       mutate('updatePageLink', {
         id: this.props.pageLink.id,
         attributes: {
-          timeline_item_position: this.props.pageLink.timeline_item_position === 'right' ? 'left' : 'right'
+          timeline_item_position: this.props.pageLink.timelineItemPosition === 'right' ? 'left' : 'right'
         }
       });
     }

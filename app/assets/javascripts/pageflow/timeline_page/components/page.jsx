@@ -1,5 +1,5 @@
 (function() {
-  class Page extends pageflow.react.components.Page {
+  class Page extends React.Component {
     render() {
       var {PageWrapper,
            PageBackground, PageBackgroundImage, PageShadow,
@@ -24,11 +24,5 @@
     }
   };
 
-  pageflow.timelinePage.Page = pageflow.react.createContainer(Page, {
-    resolve: {
-      pageLinks: {
-        type: 'pageLinks'
-      }
-    }
-  });
+  pageflow.timelinePage.Page = pageflow.react.createPage(Page);
 }());

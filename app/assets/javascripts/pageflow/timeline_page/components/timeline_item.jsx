@@ -14,8 +14,10 @@
 
           <div className="timeline_item-wrapper">
             <PageLink pageLink={this.props.pageLink}>
-              <PageThumbnail page={targetPage}
-                             customThumbnailId={this.props.pageLink.thumbnail_image_id} />
+              <PageThumbnail className="timeline_item-thumbnail"
+                             imageStyle="thumbnail_large"
+                             page={targetPage}
+                             customThumbnailId={this.props.pageLink.thumbnailImageId} />
 
               <div className="timeline_item-caption">
                 <span className="timeline_item-tagline">{this.props.pageLink.tagline}</span>
@@ -30,14 +32,14 @@
     className() {
       return [
         'timeline_item',
-        'position_' + (this.props.pageLink.timeline_item_position || 'left'),
+        'position_' + (this.props.pageLink.timelineItemPosition || 'left'),
         'alignment_' + this.alignment(),
-        this.props.pageLink.timeline_item_size || 'medium'
+        this.props.pageLink.timelineItemSize || 'medium'
       ].join(' ');
     }
 
     alignment() {
-      var position = this.props.pageLink.timeline_item_position;
+      var position = this.props.pageLink.timelineItemPosition;
 
       if (this.props.timelineLayout === 'right') {
         return 'right';
@@ -63,7 +65,7 @@
     fragments: {
       pageLink: {
         targetPage: resolve('page', {
-          property: 'target_page_id'
+          property: 'targetPageId'
         })
       }
     }
