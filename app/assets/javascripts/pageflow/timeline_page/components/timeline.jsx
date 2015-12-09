@@ -11,11 +11,15 @@
     renderTimelineItems() {
       var {TimelineItem} = pageflow.timelinePage;
 
-      return this.props.pageLinks.map((pageLink) => {
+      return this.pageLinks().map((pageLink) => {
         return (
           <TimelineItem timelineLayout={this.props.layout} pageLink={pageLink} key={pageLink.id} />
         );
       });
+    }
+
+    pageLinks() {
+      return this.props.pageLinks || [];
     }
   };
 
