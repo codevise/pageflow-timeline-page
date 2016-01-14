@@ -32,6 +32,9 @@ Include javascripts and stylesheets:
     # app/assets/stylesheets/pageflow/application.css.scss
     @import "pageflow/timeline_page";
 
+    # app/assets/stylesheets/pageflow/themes/default.css.scss
+    @import "pageflow/timeline_page/themes/default";
+
 Execute `bundle install` and restart the application server.
 
 Now you can enable the page type in your feature settings.

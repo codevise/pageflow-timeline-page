@@ -1,3 +1,5 @@
+@include pageflow-page-type-pictograms("timeline_page");
+
 .timeline {
   $timeline-main-color: $main-color !default;
   $timeline-item-background-color: #1a171c !default;
