@@ -1,17 +1,30 @@
 @include pageflow-page-type-pictograms("timeline_page");
 
-.timeline {
-  $timeline-main-color: $main-color !default;
-  $timeline-item-background-color: #1a171c !default;
-  $timeline-item-tagline-color: $timeline-main-color !default;
-  $timeline-item-hover-scale: 1.02 !default;
+$timeline-item-padding: 2px;
 
+$timeline-main-color: $main-color !default;
+
+$timeline-item-background-color: #1a171c !default;
+
+$timeline-item-text-color: #fff !default;
+
+$timeline-item-typography: () !default;
+
+$timeline-item-tagline-color: $timeline-main-color !default;
+
+$timeline-item-tagline-typography: () !default;
+
+$timeline-item-hover-scale: 1.02 !default;
+
+.timeline {
   @mixin ensure-anti-alias-for-webkit-during-transition {
     -webkit-backface-visibility: hidden;
   }
 
   .timeline_item a {
     background-color: $timeline-item-background-color;
+    color: $timeline-item-text-color;
+    padding: $timeline-item-background-color;
     @include transition(transform 0.3s);
     @include ensure-anti-alias-for-webkit-during-transition;
 
@@ -24,7 +37,19 @@
     }
   }
 
+  .timeline_item-caption {
+    @include typography(
+      $timeline-item-typography,
+      (
+        font-size: 15px,
+        font-weight: bold,
+        line-height: 21px
+      )
+    );
+  }
+
   .timeline_item-tagline {
     color: $timeline-item-tagline-color;
+    @include typography($timeline-item-tagline-typography, ());
   }
 }
