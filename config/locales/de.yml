@@ -3,11 +3,11 @@ de:
     timeline_page:
       help_entries:
         page_type:
-          menu_item: Zeitleiste
-          text: ! '# Zeitleiste
+          menu_item: Collage
+          text: ! '# Collage
 
 
-            Stelle eine Liste von Links mit dem Aussehen einer Zeitleiste zusammen. Dieser Seitentyp kann auch benutzt werden, um eine freie Kollage von Verweisen anzuordnen. Er ist aber am besten geeignet, um chronologisch geordnete Inhalte aufzubereiten.
+            Stelle eine Liste von Links mit dem Aussehen einer Collage zusammen. Dieser Seitentyp ist am besten geeignet, um chronologisch geordnete Inhalte aufzubereiten.
 
 
             Jeder Eintrag verweist auf eine andere Seite des Beitrags, auf der der Leser vertiefende Informationen finden kann.
@@ -26,16 +26,16 @@ de:
         tagline:
           label: Tagline
         thumbnail_image_id:
-          inline_help: Bild, das in der Zeitleiste angezeigt werden soll, manuell festlegen. Ansonsten wird das Thumbnail der Zielseite verwendet.
+          inline_help: Bild, das in der Collage angezeigt werden soll, manuell festlegen. Ansonsten wird das Thumbnail der Zielseite verwendet.
           label: Benutzerdefiniertes Thumbnail
         timeline_item_position:
-          inline_help: Eintrag in der Zeitleiste auf der rechten oder linken Seite zeigen.
+          inline_help: Eintrag in der Collage auf der rechten oder linken Seite zeigen.
           label: Position
           values:
             left: Links
             right: Rechts
         timeline_item_size:
-          inline_help: Einträge in der Zeitleiste können in verschiedenen Größen gezeigt werden, um das Erscheinungsbild der Seite aufzulockern.
+          inline_help: Einträge in der Collage können in verschiedenen Größen gezeigt werden, um das Erscheinungsbild der Seite aufzulockern.
           label: Größe
           values:
             large: Groß
@@ -45,9 +45,9 @@ de:
           inline_help: Leer lassen, um den Titel der Zielseite zu verwenden.
           label: Titel
       page_type_category_name: Verweise
-      page_type_description: Verweise auf andere Seiten in Form einer Zeitleiste
-      page_type_feature_name: Zeitleisten Seitentyp
-      page_type_name: Zeitleiste
+      page_type_description: Verweise auf andere Seiten in Form einer Collage
+      page_type_feature_name: Collage Seitentyp
+      page_type_name: Collage
     ui:
       configuration_editor:
         tabs:
