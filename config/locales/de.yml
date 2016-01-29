@@ -16,6 +16,7 @@ de:
             Typische Anwendungsbeispiele: Liste historischer Ereignisse, Interview Reihe, Darstellung eines mehrschrittigen Prozesses.'
       page_attributes:
         timeline_layout:
+          inline_help: Wähle hier die Ausrichtung der Verweis-Bilder für die gesamte Seite.
           label: Layout
           values:
             center: Mittig ausgerichtet
