@@ -4,7 +4,7 @@
 
   class TimelineItem extends React.Component {
     render() {
-      var {PageLink, PageThumbnail} = pageflow.react.components;
+      var {PageLink, LazyLoadedPageThumbnail} = pageflow.react.components;
       var {TimelineItemSpacer} = pageflow.timelinePage;
       var targetPage = this.props.pageLink.targetPage;
 
@@ -14,10 +14,10 @@
 
           <div className="timeline_item-wrapper">
             <PageLink pageLink={this.props.pageLink}>
-              <PageThumbnail className="timeline_item-thumbnail"
-                             imageStyle="thumbnail_large"
-                             page={targetPage}
-                             customThumbnailId={this.props.pageLink.thumbnailImageId} />
+              <LazyLoadedPageThumbnail className="timeline_item-thumbnail"
+                                       imageStyle="thumbnail_large"
+                                       page={targetPage}
+                                       customThumbnailId={this.props.pageLink.thumbnailImageId} />
 
               <div className="timeline_item-caption">
                 <span className="timeline_item-tagline">{this.props.pageLink.tagline}</span>
