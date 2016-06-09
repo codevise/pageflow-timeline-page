@@ -1,6 +1,10 @@
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'pageflow/timeline_page/version'
+
 Gem::Specification.new do |spec|
   spec.name          = 'pageflow-timeline-page'
-  spec.version       = '0.1.0.apha'
+  spec.version       = Pageflow::TimelinePage::VERSION
   spec.authors       = ['Codevise Solutions']
   spec.email         = ['info@codevise.de']
   spec.summary       = 'Pageflow page type for links ordered as timeline.'
@@ -16,4 +20,7 @@ Gem::Specification.new do |spec|
 
   # Using translations from rails locales in javascript code.
   spec.add_dependency 'i18n-js'
+
+  # Semantic versioning rake tasks
+  spec.add_development_dependency 'semmy', '~> 0.2'
 end
