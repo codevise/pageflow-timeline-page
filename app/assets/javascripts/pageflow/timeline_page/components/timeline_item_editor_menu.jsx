@@ -1,6 +1,4 @@
 (function() {
-  var mutate = pageflow.react.mutate;
-
   class TimelineItemEditorMenu extends React.Component {
     constructor(props) {
       super(props);
@@ -68,7 +66,7 @@
       var currentSizeIndex = sizes.indexOf(this.props.pageLink.timelineItemSize);
       var newSize = sizes[(currentSizeIndex + 1) % sizes.length];
 
-      mutate('updatePageLink', {
+      this.props.onUpdatePageLink({
         id: this.props.pageLink.id,
         attributes: {
           timeline_item_size: newSize
@@ -77,20 +75,27 @@
     }
 
     _handleTogglePositionClick() {
-      mutate('updatePageLink', {
+      this.props.onUpdatePageLink({
         id: this.props.pageLink.id,
         attributes: {
           timeline_item_position: this.props.pageLink.timelineItemPosition === 'right' ? 'left' : 'right'
         }
       });
     }
-  };
+  }
 
   TimelineItemEditorMenu.contextTypes = {
     pageScroller: React.PropTypes.object
-  }
+  };
 
-  pageflow.timelinePage.TimelineItemEditorMenu = pageflow.react.createContainer(TimelineItemEditorMenu, {
-    editorOnly: true
+  const {
+    mutate, createContainer
+  } = pageflow.react;
+
+  pageflow.timelinePage.TimelineItemEditorMenu = createContainer(TimelineItemEditorMenu, {
+    editorOnly: true,
+    fragments: {
+      onUpdatePageLink: mutate('updatePageLink'),
+    }
   });
 }());
