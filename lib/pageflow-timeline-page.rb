@@ -7,7 +7,7 @@ module Pageflow
     end
 
     def self.page_type
-      Pageflow::React.create_page_type('timeline_page', 'pageflow.timelinePage.Page')
+      Pageflow::React.create_page_type('timeline_page')
     end
   end
 end

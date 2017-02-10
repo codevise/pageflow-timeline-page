@@ -9,9 +9,7 @@ pageflow.editor.pageTypes.register('timeline_page', {
       });
 
       this.tab('files', function() {
-        this.input('background_image_id', pageflow.FileInputView, {
-          collection: 'image_files'
-        });
+        this.group('background');
         this.input('thumbnail_image_id', pageflow.FileInputView, {
           collection: 'image_files',
           positioning: false
