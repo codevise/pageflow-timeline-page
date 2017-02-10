@@ -1,5 +1,7 @@
 (function() {
-  var mutate = pageflow.react.mutate;
+  const {connectInPage, combine} = pageflow.react;
+  const {editorOnly} = pageflow.react.components;
+  const {updatePageLink} = pageflow.react.actions;
 
   class TimelineItemEditorMenu extends React.Component {
     constructor(props) {
@@ -68,20 +70,18 @@
       var currentSizeIndex = sizes.indexOf(this.props.pageLink.timelineItemSize);
       var newSize = sizes[(currentSizeIndex + 1) % sizes.length];
 
-      mutate('updatePageLink', {
-        id: this.props.pageLink.id,
-        attributes: {
-          timeline_item_size: newSize
-        }
+      this.props.updatePageLink({
+        linkId: this.props.pageLink.id,
+        name: 'timelineItemSize',
+        value: newSize
       });
     }
 
     _handleTogglePositionClick() {
-      mutate('updatePageLink', {
-        id: this.props.pageLink.id,
-        attributes: {
-          timeline_item_position: this.props.pageLink.timelineItemPosition === 'right' ? 'left' : 'right'
-        }
+      this.props.updatePageLink({
+        linkId: this.props.pageLink.id,
+        name: 'timelineItemPosition',
+        value: this.props.pageLink.timelineItemPosition === 'right' ? 'left' : 'right'
       });
     }
   };
@@ -90,7 +90,7 @@
     pageScroller: React.PropTypes.object
   }
 
-  pageflow.timelinePage.TimelineItemEditorMenu = pageflow.react.createContainer(TimelineItemEditorMenu, {
-    editorOnly: true
-  });
+  pageflow.timelinePage.TimelineItemEditorMenu = editorOnly(connectInPage(null, {
+    updatePageLink
+  })(TimelineItemEditorMenu));
 }());

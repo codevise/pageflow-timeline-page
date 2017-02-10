@@ -1,12 +1,12 @@
-
 (function() {
-  var resolve = pageflow.react.resolve;
+  const {connect, combine} = pageflow.react;
+  const {pageAttributes, prop} = pageflow.react.selectors;
 
   class TimelineItem extends React.Component {
     render() {
       var {PageLink, LazyLoadedPageThumbnail} = pageflow.react.components;
       var {TimelineItemSpacer} = pageflow.timelinePage;
-      var targetPage = this.props.pageLink.targetPage;
+      var targetPage = this.props.targetPage;
 
       return (
         <li className={this.className()}>
@@ -57,17 +57,11 @@
 
     caption() {
       return this.props.pageLink.title ||
-             (this.props.pageLink.targetPage && this.props.pageLink.targetPage.title);
+             (this.props.targetPage && this.props.targetPage.title);
     }
   };
 
-  pageflow.timelinePage.TimelineItem = pageflow.react.createContainer(TimelineItem, {
-    fragments: {
-      pageLink: {
-        targetPage: resolve('page', {
-          property: 'targetPageId'
-        })
-      }
-    }
-  });
+  pageflow.timelinePage.TimelineItem = connect(combine({
+    targetPage: pageAttributes({id: prop('pageLink.targetPageId')})
+  }))(TimelineItem);
 }());

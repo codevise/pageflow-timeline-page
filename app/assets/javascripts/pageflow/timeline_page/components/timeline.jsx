@@ -1,5 +1,5 @@
 (function() {
-  class Timeline extends React.Component {
+  pageflow.timelinePage.Timeline = class extends React.Component {
     render() {
       return (
         <ul className="timeline">
@@ -22,6 +22,4 @@
       return this.props.pageLinks || [];
     }
   };
-
-  pageflow.timelinePage.Timeline = pageflow.react.createContainer(Timeline);
 }());

@@ -1,5 +1,6 @@
 (function() {
-  var mutate = pageflow.react.mutate;
+  const {connectInPage} = pageflow.react;
+  const {updatePageLink} = pageflow.react.actions;
 
   class TimelineItemSpacer extends React.Component {
     constructor(props) {
@@ -75,11 +76,10 @@
 
       var width = ReactDOM.findDOMNode(this).offsetWidth;
 
-      mutate('updatePageLink', {
-        id: this.props.pageLink.id,
-        attributes: {
-          top: top / width * 100
-        }
+      this.props.updatePageLink({
+        linkId: this.props.pageLink.id,
+        name: 'top',
+        value: top / width * 100
       });
     }
 
@@ -90,5 +90,7 @@
     }
   }
 
-  pageflow.timelinePage.TimelineItemSpacer = pageflow.react.createPageComponent(TimelineItemSpacer);
+  pageflow.timelinePage.TimelineItemSpacer = connectInPage(null, {
+    updatePageLink
+  })(TimelineItemSpacer);
 }());

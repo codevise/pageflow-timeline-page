@@ -1,17 +1,18 @@
 (function() {
+  const {registerPageType, connectInPage, combine} = pageflow.react;
+  const {pageAttributes} = pageflow.react.selectors;
+
   class Page extends React.Component {
     render() {
       var {PageWrapper,
-           PageBackground, PageBackgroundImage, PageShadow,
+           MediaPageBackground,
            PageContent, PageHeader, PageText} = pageflow.react.components;
+
       var {Timeline} = pageflow.timelinePage;
 
       return (
         <PageWrapper>
-          <PageBackground>
-            <PageBackgroundImage page={this.props.page} />
-            <PageShadow page={this.props.page} />
-          </PageBackground>
+          <MediaPageBackground page={this.props.page} />
 
           <PageContent>
             <PageHeader page={this.props.page} />
@@ -24,5 +25,13 @@
     }
   };
 
-  pageflow.timelinePage.Page = pageflow.react.createPage(Page);
+  registerPageType('timeline_page', {
+    component: connectInPage(combine({
+      page: pageAttributes()
+    }))(Page),
+
+    reduxModules: [
+      pageflow.react.mediaPageBackgroundReduxModule
+    ]
+  });
 }());
