@@ -4,16 +4,16 @@ de:
       help_entries:
         page_type:
           menu_item: Collage
-          text: ! '# Collage
-
+          text: |-
+            # Collage
 
             Stelle eine Liste von Links mit dem Aussehen einer Collage zusammen. Dieser Seitentyp ist am besten geeignet, um chronologisch geordnete Inhalte aufzubereiten.
 
-
             Jeder Eintrag verweist auf eine andere Seite des Beitrags, auf der der Leser vertiefende Informationen finden kann.
 
+            Für den Hintergrund kann ein Bild oder Video verwendet werden.
 
-            Typische Anwendungsbeispiele: Liste historischer Ereignisse, Interview Reihe, Darstellung eines mehrschrittigen Prozesses.'
+            Typische Anwendungsbeispiele: Liste historischer Ereignisse, Interview Reihe, Darstellung eines mehrschrittigen Prozesses.
       page_attributes:
         timeline_layout:
           inline_help: Wähle hier die Ausrichtung der Verweis-Bilder für die gesamte Seite.

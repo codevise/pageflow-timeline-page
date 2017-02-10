@@ -4,16 +4,16 @@ en:
       help_entries:
         page_type:
           menu_item: Collage
-          text: ! '# Collage
-
+          text: |-
+            # Collage
 
             Build a Collage like list of links to other pages. This page type works best to visualize chronological content.
 
-
             Each item links to a page inside the Pageflow allowing the user to further explore details of a topic.
 
+            You can use an image or video for the background.
 
-            Examples of application: List of historical events, series of interviews, depicting a multi step processes.'
+            Examples of application: List of historical events, series of interviews, depicting a multi step processes.
       page_attributes:
         timeline_layout:
           inline_help: Choose the alignment of images for the collage page.
