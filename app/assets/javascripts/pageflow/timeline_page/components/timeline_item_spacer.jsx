@@ -9,25 +9,22 @@
     }
 
     render() {
-      var {TimelineItemEditorMenu} = pageflow.timelinePage;
+      const {TimelineItemEditorMenu} = pageflow.timelinePage;
+      const {Measure} = pageflow.react.components;
 
       return (
-        <div className={this._className()}>
-          <div className="timeline_item_spacer-inner" style={this._style()} />
-          <TimelineItemEditorMenu pageLink={this.props.pageLink}
-                                  top={this._menuTop()}
-                                  onDrag={this._handleDrag.bind(this)}
-                                  onDragStop={this._handleDragStop.bind(this)}/>
-        </div>
+        <Measure whitelist={['width']}>
+          { ({width}) =>
+            <div className={this._className()}>
+              <div className="timeline_item_spacer-inner" style={this._style()} />
+              <TimelineItemEditorMenu pageLink={this.props.pageLink}
+                                      top={this._menuTop(width)}
+                                      onDrag={this._handleDrag.bind(this)}
+                                      onDragStop={top => this._handleDragStop(top, width)}/>
+            </div>
+          }
+        </Measure>
       );
-    }
-
-    pageDidActivate() {
-      this._measure();
-    }
-
-    pageDidResize() {
-      this._measure();
     }
 
     _className() {
@@ -50,12 +47,8 @@
       }
     }
 
-    _menuTop() {
-      if (this.state.width) {
-        return this.state.width * (this.props.pageLink.top || 0) / 100;
-      }
-
-      return 0;
+    _menuTop(width) {
+      return width * (this.props.pageLink.top || 0) / 100;
     }
 
     _isDragging() {
@@ -69,23 +62,15 @@
       });
     }
 
-    _handleDragStop(top) {
+    _handleDragStop(top, width) {
       this.setState({
         dragging: false
       });
-
-      var width = ReactDOM.findDOMNode(this).offsetWidth;
 
       this.props.updatePageLink({
         linkId: this.props.pageLink.id,
         name: 'top',
         value: top / width * 100
-      });
-    }
-
-    _measure() {
-      this.setState({
-        width: ReactDOM.findDOMNode(this).offsetWidth
       });
     }
   }

@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'pageflow', '~> 12.0.pre'
+  spec.add_dependency 'pageflow', ['>= 12.0.0.rc6', '< 13']
 
   # Using translations from rails locales in javascript code.
   spec.add_dependency 'i18n-js'
