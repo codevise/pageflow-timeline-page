@@ -6,20 +6,21 @@
   class TimelineItemEditorMenu extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {};
+      this.state = {
+        top: 0
+      };
     }
 
     render() {
       var {Draggable} = pageflow.react.components;
 
-      var start = {x: 0, y: this.props.top || 0};
+      var position = {x: 0, y: this.state.top};
       var bounds = {left: 0, right: 0, top: 0, bottom: 1000};
 
       return (
-        <Draggable start={start}
+        <Draggable position={position}
                    grid={[5, 5]}
                    bounds={bounds}
-                   moveOnStartChange={this.state.topChanged}
                    handle=".timeline_item_editor_menu-handle"
                    onStart={this._handleDragStart.bind(this)}
                    onDrag={this._handleDrag.bind(this)}
@@ -43,21 +44,24 @@
     }
 
     componentWillReceiveProps(nextProps) {
-      this.setState({
-        topChanged: (nextProps.top !== this.props.top)
-      });
+      if (nextProps.top !== this.props.top) {
+        this.setState({
+          top: nextProps.top
+        });
+      }
     }
 
     _handleDragStart() {
       this.context.pageScroller.disable();
     }
 
-    _handleDrag(event, ui) {
-      this.props.onDrag(ui.position.top);
+    _handleDrag(event, dragEvent) {
+      this.setState({top: dragEvent.y});
+      this.props.onDrag(dragEvent.y);
     }
 
-    _handleDragStop(event, ui) {
-      this.props.onDragStop(ui.position.top);
+    _handleDragStop(event, dragEvent) {
+      this.props.onDragStop(dragEvent.y);
       this.context.pageScroller.enable();
     }
 
