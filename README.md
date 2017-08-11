@@ -29,10 +29,10 @@ Include javascripts and stylesheets:
     # app/assets/javascripts/pageflow/editor.js
     //= require pageflow/timeline_page/editor
 
-    # app/assets/stylesheets/pageflow/application.css.scss
+    # app/assets/stylesheets/pageflow/application.scss
     @import "pageflow/timeline_page";
 
-    # app/assets/stylesheets/pageflow/themes/default.css.scss
+    # app/assets/stylesheets/pageflow/themes/default.scss
     @import "pageflow/timeline_page/themes/default";
 
 Execute `bundle install` and restart the application server.
