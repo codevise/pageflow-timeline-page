@@ -1,13 +1,11 @@
 # CHANGELOG
 
-### Changes on `master`
+### Unreleased Changes
 
-[Compare changes](https://github.com/codevise/pageflow-timeline-page/compare/v0.1.0...master)
+[Compare changes](https://github.com/codevise/pageflow-timeline-page/compare/0-1-stable...master)
 
 None so far.
 
-### Version 0.1.0
-
-2016-06-09
-
-- Initial release.
+See
+[0-1-stable branch](https://github.com/codevise/pageflow-timeline-page/blob/0-1-stable/CHANGELOG.md)
+for previous changes.
