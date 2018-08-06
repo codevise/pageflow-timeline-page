@@ -16,6 +16,12 @@ $timeline-item-tagline-typography: () !default;
 
 $timeline-item-hover-scale: 1.02 !default;
 
+$timeline-item-inverted-background-color: null !default;
+
+$timeline-item-inverted-text-color: null !default;
+
+$timeline-item-caption-padding: 7px 10px !default;
+
 .timeline {
   @mixin ensure-anti-alias-for-webkit-during-transition {
     -webkit-backface-visibility: hidden;
@@ -24,7 +30,7 @@ $timeline-item-hover-scale: 1.02 !default;
   .timeline_item a {
     background-color: $timeline-item-background-color;
     color: $timeline-item-text-color;
-    padding: $timeline-item-background-color;
+    padding: $timeline-item-padding;
     @include transition(transform 0.3s);
     @include ensure-anti-alias-for-webkit-during-transition;
 
@@ -35,9 +41,16 @@ $timeline-item-hover-scale: 1.02 !default;
         @include transform(scale(1));
       }
     }
+
+    .invert & {
+      background-color: $timeline-item-inverted-background-color;
+      color: $timeline-item-inverted-text-color;
+    }
   }
 
+
   .timeline_item-caption {
+    padding: $timeline-item-caption-padding;
     @include typography(
       $timeline-item-typography,
       (
