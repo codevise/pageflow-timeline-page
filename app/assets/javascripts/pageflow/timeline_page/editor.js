@@ -47,6 +47,7 @@ pageflow.editor.pageTypes.register('timeline_page', {
         this.group('page_link');
 
         this.input('thumbnail_image_id', pageflow.FileInputView, {
+          positioning: false,
           collection: 'image_files',
           fileSelectionHandler: 'pageLink'
         });
