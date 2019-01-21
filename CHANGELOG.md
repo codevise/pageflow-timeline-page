@@ -1,5 +1,13 @@
 # CHANGELOG
 
+### Version 1.2.1
+
+2019-01-21
+
+[Compare changes](https://github.com/codevise/pageflow-timeline-page/compare/v1.2.0...v1.2.1)
+
+- Bump version to 1.2.1 because of invalid yank
+
 ### Version 1.2.0
 
 2019-01-21
