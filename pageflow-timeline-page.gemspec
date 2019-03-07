@@ -19,7 +19,9 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'pageflow', ['>= 12.0.0.rc6', '< 14']
 
-  spec.add_development_dependency 'bundler', '~> 1.0'
+  spec.add_development_dependency 'bundler', ['>= 1.0', '< 3']
+  spec.add_development_dependency 'pageflow-support', '~> 13.6.x'
+  spec.add_development_dependency 'rspec-rails', '~> 3.0'
   spec.add_development_dependency 'rake', '~> 12.0'
 
   # Semantic versioning rake tasks
