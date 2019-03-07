@@ -1,6 +1,7 @@
 # Pageflow Timeline Page
 
 [![Gem Version](https://badge.fury.io/rb/pageflow-timeline-page.svg)](http://badge.fury.io/rb/pageflow-timeline-page)
+[![Build Status](https://travis-ci.org/codevise/pageflow-timeline-page.svg?branch=master)](https://travis-ci.org/codevise/pageflow-timeline-page)
 
 Page type to display a chronological list of page links.
 
