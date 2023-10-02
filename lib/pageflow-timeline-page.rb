@@ -1,4 +1,5 @@
 require 'pageflow/timeline_page/engine'
+require 'pageflow/timeline_page/version'
 
 module Pageflow
   module TimelinePage

@@ -15,13 +15,19 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = '~> 2.1'
+  spec.required_ruby_version = '>= 2.1'
 
   spec.add_dependency 'pageflow', ['>= 12.0.0.rc6', '< 17']
 
   spec.add_development_dependency 'bundler', ['>= 1.0', '< 3']
   spec.add_development_dependency 'pageflow-support', ['>= 14', '< 17']
-  spec.add_development_dependency 'rspec-rails', '~> 3.0'
+
+  if ENV['PAGEFLOW_DEPENDENCIES'] == 'experimental'
+    spec.add_development_dependency 'rspec-rails', '~> 6.0'
+  else
+    spec.add_development_dependency 'rspec-rails', '~> 3.0'
+  end
+
   spec.add_development_dependency 'rake', '~> 12.0'
 
   # Semantic versioning rake tasks
